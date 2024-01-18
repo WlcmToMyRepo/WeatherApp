@@ -16,7 +16,6 @@ Future<WeatherData> fetchDataFromApi(String location) async {
 
   Map<String, dynamic> jsonData = jsonDecode(response.body);
 
-  print("CLIMATE DETAIL [[ ${jsonData['list'][0]['weather'][0]['main']}]]");
-  WeatherData data = WeatherData.fromJson(jsonData);
-  return data;
+  // print("CLIMATE DETAIL [[ ${jsonData['list'][0]['weather'][0]['main']}]]");
+  return WeatherData.fromJson(jsonData);
 }

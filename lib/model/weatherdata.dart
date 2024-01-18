@@ -1,9 +1,11 @@
 class WeatherData {
-  final String cityName, climate;
+  final String cod, cityName, climate;
+
   double temp, maxTemp, minTemp, feelsLike;
   final dynamic date, humidity, windSpeed;
   WeatherData(
-      {required this.cityName,
+      {required this.cod,
+      required this.cityName,
       required this.date,
       required this.temp,
       required this.feelsLike,
@@ -20,6 +22,7 @@ class WeatherData {
 
   factory WeatherData.fromJson(Map<String, dynamic> json) {
     return WeatherData(
+      cod: json['cod'],
       cityName: json['city']['name'],
       date: json['list'][0]['dt'],
       temp: json['list'][0]['main']['temp'],
